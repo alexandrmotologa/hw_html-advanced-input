@@ -18,10 +18,10 @@
         .error:before{
             content:"";
         }
-        .validation input:valid ~ .error:before{
+        .validation input:valid + .error::before{
             content:"";
         }
-        .validation input:invalid ~ .error:after{
+        .validation input:invalid + .error::after{
             content:"Please enter a valid phone number including area code";
             color:red;
             border: 1px #333 solid;
