@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .validation input{
+            padding: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+        .validation input:invalid{
+            border-color: red;
+        }
+        .validation input:valid{
+            border-color: green;
+        }
+        .error:before{
+            content:"";
+        }
+        .validation input:valid ~ .error:before{
+            content:"";
+        }
+        .validation input:invalid ~ .error:after{
+            content:"Please enter a valid phone number including area code";
+            color:red;
+            border: 1px #333 solid;
+            padding: 5px;
+            background-color:beige;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+    </style>
+        
+
+</head>
+<body>
+    <label class="validation">
+        <input type="text" placeholder="enter phone number" pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$">
+        <span class="error"></span>
+    </label>
+</body>
+</html>
